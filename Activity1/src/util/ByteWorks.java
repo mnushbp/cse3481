@@ -26,6 +26,7 @@ public class ByteWorks
 		   int length = (int) longlength;
 		   if(length != longlength)
 			   throw new IOException("File size >= 2 GB");
+		   //create array and read file into it
 		   byte[] data = new byte[length];
 		   f.readFully(data);
 		   return data;
