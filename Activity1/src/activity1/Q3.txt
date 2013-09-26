@@ -1,0 +1,4 @@
+Alice and Bob have a shared secret key. Argue that a when Bob receives an encrypted 
+document from Alice, he would be confident that she sent it (authentication assured)
+yet she can deny sending it (origin non-repudiation not assured). 
+

@@ -1,0 +1,4 @@
+ Can you use the meet in the middle strategy to attack the Affine cipher? 
+ Explain step-by-step how it would work. 
+ 
+ 

@@ -1,0 +1,4 @@
+Alice and Bob have public/private key pair each. How can Alice send a document 
+to Bob so that he would have authentication and non-repudiation. How would your 
+answer change if the confidentiality of the transmission is not required. 
+

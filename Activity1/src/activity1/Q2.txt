@@ -1,0 +1,21 @@
+If Eve were to have access to the channel through which Alice and Bob communicate, she can 
+launch the following kinds of attacks: Interruption, Denial of Service, Interception, Traffic 
+Analysis, Modification, Masquerade, Fabrication, and Replay. Describe each and indicate it 
+is an attack on what (in terms of the CIA). In addition, classify each attack as active or 
+passive. How do the terms sniffing and spoofing fit into the above attack terminology? 
+
+Assume that communication is from Alice to Bob
+
+Interruption: stopping the flow of information to Alice or Bob. Active.
+Denial of Service: using some means of denying Alice or Bob a means of communication. Active
+Interception: acquiring information en route to Alice or Bob. Passive.
+Traffic Analysis: examining intercepted communications. Passive.
+Modification: changing information en route to Alice or Bob. Active.
+Masquerade: communicating with Alice or Bob under a trusted pseudonym. Active.
+Fabrication: creating false data to send to Alice or Bob. Active.
+Replay: intercepting information en route to Alice or Bob and constantly re-sending that
+information in order to analyze the response. Active.
+
+Sniffing: analyzing communications without interfering, i.e. sniffing packets to determine content
+Spoofing: creating false data or modifying existing data to gain the appearance of authenticity and
+trustworthiness

@@ -1,0 +1,3 @@
+Can you think of a known-ciphertext (aka ciphertext only) cryptanalytic attack 
+(i.e. not brute-force) against the Affine cipher? Explain step-by-step how it 
+would work. 

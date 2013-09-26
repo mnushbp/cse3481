@@ -1,0 +1,6 @@
+A web site has a public key U and a private key R. You want to send your 
+creditcard number M to the site ensuring confidentiality. What do you do? 
+And after receiving your credit card, the site wants to send you a confirmation 
+number also confidentially but you don't have a public/private key pair. 
+How can the site do this?
+
