@@ -4,3 +4,15 @@ And after receiving your credit card, the site wants to send you a confirmation
 number also confidentially but you don't have a public/private key pair. 
 How can the site do this?
 
+To send M:
+1) acquire U.
+2) encrypt M with U.
+3) transmit M' to the website.
+4) website decrypts M' with R.
+
+To confirm:
+1) acquire U.
+2) encrypt secret key and request for symmetrical encryption (RQ) with U.
+3) transmit RQ' to the website
+4) website encrypts confirmation with secret key
+5) decrypt confirmation with secret key.

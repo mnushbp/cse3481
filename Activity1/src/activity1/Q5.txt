@@ -2,3 +2,5 @@ Alice and Bob have public/private key pair each. How can Alice send a document
 to Bob so that he would have authentication and non-repudiation. How would your 
 answer change if the confidentiality of the transmission is not required. 
 
+1) Alice sends 'handshake' request to Bob, encrypted with Bob's public key.
+2) Bob decrypts with private key and encrypts return 'handshake' with alice's public key

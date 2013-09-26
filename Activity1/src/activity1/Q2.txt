@@ -4,17 +4,18 @@ Analysis, Modification, Masquerade, Fabrication, and Replay. Describe each and i
 is an attack on what (in terms of the CIA). In addition, classify each attack as active or 
 passive. How do the terms sniffing and spoofing fit into the above attack terminology? 
 
-Assume that communication is from Alice to Bob
-
-Interruption: stopping the flow of information to Alice or Bob. Active.
-Denial of Service: using some means of denying Alice or Bob a means of communication. Active
-Interception: acquiring information en route to Alice or Bob. Passive.
-Traffic Analysis: examining intercepted communications. Passive.
-Modification: changing information en route to Alice or Bob. Active.
-Masquerade: communicating with Alice or Bob under a trusted pseudonym. Active.
-Fabrication: creating false data to send to Alice or Bob. Active.
+Interruption: Stopping the flow of information to Alice or Bob. Active attack on availability.
+Denial of Service: Using some means of denying Alice or Bob a means of communication. Active
+attack on availability.
+Interception: Acquiring information that is destined to Alice or Bob. Passive attack on 
+confidentiality.
+Traffic Analysis: examining intercepted communications. Passive attack on confidentiality.
+Modification: changing information en route to Alice or Bob. Active attack on integrity.
+Masquerade: communicating with Alice or Bob under a trusted pseudonym. Active attack on integrity.
+Fabrication: creating false data to send to Alice or Bob. Active attack on integrity.
 Replay: intercepting information en route to Alice or Bob and constantly re-sending that
-information in order to analyze the response. Active.
+information in order to analyze the response. Active attack on availability and/or integrity
+and/or confidentiality.
 
 Sniffing: analyzing communications without interfering, i.e. sniffing packets to determine content
 Spoofing: creating false data or modifying existing data to gain the appearance of authenticity and
