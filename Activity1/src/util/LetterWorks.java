@@ -1,4 +1,5 @@
 package util;
+import tests.Vignere;
 
 /** General utility methods useful for working with classical ciphers
  * @author Matt Carr
@@ -32,7 +33,16 @@ public class LetterWorks
     * Compute the frequencies of letters in a byte array made up of caps
     **/
    public static int[] getFrequencies(byte[] ar) {
-	   return null;
+	   
+	   int[] frequencies = new int[26];
+	   String toExamine = new String(ar);
+	   char[] charArray = toExamine.toCharArray();
+	   
+	   for(char c : charArray) {
+		   frequencies[Vignere.charToNum(c)]++;
+	   }
+	      
+	   return frequencies;
    }
 
    /**
@@ -69,7 +79,20 @@ public class LetterWorks
     * Compute Index of Coincidence via frequencies
     **/
    public static double getFreqIC(byte[] ar) {
-	   return 0;
+	   
+	   int[] frequencies = getFrequencies(ar);
+	   String text = new String(ar);
+	   int n = text.length();
+	   int IoC = 0;
+	   
+	   for(int i : frequencies) {
+		   
+		   IoC += ((i*(i+1))/(n*(n-1)));
+		   
+	   }
+	   
+	   
+	   return IoC;
    }
 
    /**
