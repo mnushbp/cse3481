@@ -2,3 +2,9 @@ Alice and Bob have a shared secret key. Argue that a when Bob receives an encryp
 document from Alice, he would be confident that she sent it (authentication assured)
 yet she can deny sending it (origin non-repudiation not assured). 
 
+It is possible that Alice may have shared her secret key. As Bob is unaware that
+Alice has done this, he is convinced that she is the only other person with this
+key. Thus, anything that was sent with Alice's encryption would naturally be 
+assumed to have come from her. However, as Alice has shared this key without Bob's
+knowledge, whoever Alice may have shared the key with now has the ability to
+encrypt documents in the same fashion.

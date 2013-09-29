@@ -1,3 +1,12 @@
 Can you think of a known-ciphertext (aka ciphertext only) cryptanalytic attack 
 (i.e. not brute-force) against the Affine cipher? Explain step-by-step how it 
 would work. 
+
+1) Examine letter frequencies. As 'e' is the most common letter in the english
+ language, the ciphertext translation of 'e' will be the most common letter in
+ the ciphertext.
+2) Once 'e' is isolated, examine the degree of difference from the ciphertext
+ character to 'e'.
+3) Repeat for the next most common characters
+4) Compare the different degrees, taking into account the mod 26, and
+ mathematically determine the affine variables.

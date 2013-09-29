@@ -19,24 +19,25 @@ public class ByteWorks
     **/
    public static byte[] fileToBytes(String filename) throws Exception {
 	   File file = new File(filename);
-	   RandomAccessFile f = new RandomAccessFile(file, "r");
-	   try {
-		   //get file size, error if > 2GB
-		   long longlength = f.length();
-		   int length = (int) longlength;
-		   if(length != longlength)
-			   throw new IOException("File size >= 2 GB");
-		   //create array and read file into it
-		   byte[] data = new byte[length];
-		   f.readFully(data);
-		   return data;
-	   } finally {
-		   f.close();
-	   }  
+	   int read;
+	   FileInputStream in;
+	   ByteArrayOutputStream out;
+	   in = new FileInputStream(file);
+	   out = new ByteArrayOutputStream();
+
+	   read = in.read();
+	   
+	   while(read > 0) {
+		   out.write(read);
+		   read = in.read();
+	   }
+	   in.close();
+	   return out.toByteArray();
+	   
    }
 
    /** 
-    * Create a file with the given name and wWrite the given array of bytes to it 
+    * Create a file with the given name and write the given array of bytes to it 
     **/ 
    public static void bytesToFile(byte[] data, String filename) throws Exception {
 	   File file = new File(filename);

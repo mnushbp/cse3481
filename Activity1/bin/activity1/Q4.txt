@@ -12,7 +12,7 @@ To send M:
 
 To confirm:
 1) acquire U.
-2) encrypt secret key and request for symmetrical encryption (RQ) with U.
+2) encrypt a secret key and request for symmetrical encryption (RQ) with U.
 3) transmit RQ' to the website
 4) website encrypts confirmation with secret key
 5) decrypt confirmation with secret key.

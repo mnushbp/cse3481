@@ -1,8 +1,8 @@
 package util;
 
 /** General utility methods useful for working with classical ciphers
- * @author
- * @version
+ * @author Matt Carr
+ * @version 0.1
  */
 public class LetterWorks
 {
@@ -17,7 +17,15 @@ public class LetterWorks
     * byte array with letters converted to upper-case.
     **/
    public static byte[] clean(byte[] in) {
-	   return null;
+	   
+	   String toClean = new String(in);
+	   char[] parseThrough = toClean.toCharArray();
+	   StringBuffer cleaned = new StringBuffer();
+	   for(char c : parseThrough) {   
+		   if(c >= 'A' && c <= 'z') 
+			   cleaned.append(c); 
+	   }
+	   return cleaned.toString().toUpperCase().getBytes();
    }
 
    /**

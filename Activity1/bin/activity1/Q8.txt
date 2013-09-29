@@ -1,4 +1,7 @@
  Can you use the meet in the middle strategy to attack the Affine cipher? 
  Explain step-by-step how it would work. 
  
- 
+1) Compare all letters between the plaintext and ciphertext, and note the
+ degree of difference for each letter.
+2) Compare the different degrees, taking into account the mod 26, and
+ mathematically determine the affine variables.
