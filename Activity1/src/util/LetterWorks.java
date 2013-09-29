@@ -38,8 +38,11 @@ public class LetterWorks
 	   String toExamine = new String(ar);
 	   char[] charArray = toExamine.toCharArray();
 	   
+	   System.out.println(toExamine);
+	   
 	   for(char c : charArray) {
-		   frequencies[Vignere.charToNum(c)]++;
+		   if(Vignere.charToNum(c) >= 0)
+			   frequencies[Vignere.charToNum(c)]++;
 	   }
 	      
 	   return frequencies;
