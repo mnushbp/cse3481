@@ -1,5 +1,5 @@
 package util;
-import tests.Vignere;
+import tests.Ciphers;
 
 /** General utility methods useful for working with classical ciphers
  * @author Matt Carr
@@ -37,12 +37,9 @@ public class LetterWorks
 	   int[] frequencies = new int[26];
 	   String toExamine = new String(ar);
 	   char[] charArray = toExamine.toCharArray();
-	   
-	   System.out.println(toExamine);
-	   
 	   for(char c : charArray) {
-		   if(Vignere.charToNum(c) >= 0)
-			   frequencies[Vignere.charToNum(c)]++;
+		   if(Ciphers.charToNum(c) != -1)
+			   frequencies[Ciphers.charToNum(c)]++;
 	   }
 	      
 	   return frequencies;
