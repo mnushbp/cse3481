@@ -27,7 +27,7 @@ public class ByteWorks
 
 	   read = in.read();
 	   
-	   while(read > 0) {
+	   while(read != -1) {
 		   out.write(read);
 		   read = in.read();
 	   }

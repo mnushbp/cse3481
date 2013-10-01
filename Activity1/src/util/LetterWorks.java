@@ -81,13 +81,12 @@ public class LetterWorks
    public static double getFreqIC(byte[] ar) {
 	   
 	   int[] frequencies = getFrequencies(ar);
-	   String text = new String(ar);
-	   int n = text.length();
-	   int IoC = 0;
+	   int n = ar.length;
+	   double IoC = 0;
 	   
 	   for(int i : frequencies) {
 		   
-		   IoC += ((i*(i+1))/(n*(n-1)));
+		   IoC += (((double)i*((double)i+1))/((double)n*((double)n-1)));
 		   
 	   }
 	   
