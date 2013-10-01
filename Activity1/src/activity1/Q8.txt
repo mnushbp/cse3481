@@ -1,4 +1,6 @@
  Can you use the meet in the middle strategy to attack the Affine cipher? 
  Explain step-by-step how it would work. 
  
+ Equation to result in CT from PT: CT = ((PT*a)+b)*c)+d -> CT = PT*a*c + b*c + d
+ 
 1) 

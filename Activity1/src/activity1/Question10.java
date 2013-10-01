@@ -85,7 +85,6 @@ public class Question10 {
 				comparison[i] = ar[cipherIndex];
 				cipherIndex += keyLength;
 			}
-			System.out.println();
 			indexOfCoincidence = LetterWorks.getFreqIC(comparison);
 			System.out.printf("KeyLength %d produced IoC %f\n", keyLength, indexOfCoincidence);
 			if(indexOfCoincidence > 0.06) {
