@@ -8,5 +8,14 @@ would work.
 2) Once 'e' is isolated, examine the degree of difference from the ciphertext
  character to 'e'.
 3) Repeat for the next most common characters
-4) Compare the different degrees, taking into account the mod 26, and
- mathematically determine the affine variables.
+4) For each character, iterate through multiplying that plaintext character's 
+ index by the loop's iteration (1, 2, 3...), and then finding the difference in
+ index between the resultant character and the ciphertext character. Apply those
+ two variables to the next character and see if they produce a result. 
+5) Continue iterating until variables are found that agree with the common
+ characters' translations.
+ 
+ e.g. given e=z, for steps 4/5, do (e*1=e)+21 = z. Then see if 1 and 21 apply to
+ the next most common letter. Then do the same for (e*2=j)+19=z, and so on.
+ 
+ 

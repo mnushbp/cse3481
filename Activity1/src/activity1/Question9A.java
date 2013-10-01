@@ -9,9 +9,9 @@ public class Question9A {
 		String fileName = "Sh1949";
 		
 		try {
-			byte[] byteArray = ByteWorks.fileToBytes("C:/"+fileName+".txt");
+			byte[] byteArray = ByteWorks.fileToBytes("./"+fileName+".txt");
 			byteArray = LetterWorks.clean(byteArray);
-			ByteWorks.bytesToFile(byteArray, "C:/temp/"+fileName+".PT");
+			ByteWorks.bytesToFile(byteArray, "./"+fileName+".PT");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
