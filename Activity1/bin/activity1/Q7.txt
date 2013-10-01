@@ -1,5 +1,8 @@
 Can you think of a known-plaintext cryptanalytic attack (i.e. not brute-force)
  against the Affine cipher? Explain step-by-step how it would work. 
  
-Given no ciphertext and no method of acquiring ciphertext, there is no possible 
-method of attacking the affine cipher, as having the plaintext gives nothing.
+1) Compare all letters between the plaintext and ciphertext, and note the
+ degree of difference for each letter.
+2) As in Question 6, compare the different degrees (although with far more
+diversity, now that all letters are known), until the affine variables are
+revealed.

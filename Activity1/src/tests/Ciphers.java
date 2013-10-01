@@ -12,7 +12,7 @@ public class Ciphers {
 		
 	}
 	
-	public static String vignereEncrypt(String plaintext, int alpha, int beta) {
+	public static String affineEncrypt(String plaintext, int alpha, int beta) {
 		
 		StringBuffer ciphertext = new StringBuffer();
 		String toReturn;
