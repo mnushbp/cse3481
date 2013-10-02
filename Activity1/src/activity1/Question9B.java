@@ -18,7 +18,9 @@ public class Question9B {
 			String plaintext = new String(byteArray);
 			String caesarEncrypted;
 			int[] freqs = LetterWorks.getFrequencies(byteArray);
+			
 			System.out.print("Plaintext Frequencies: ");
+			
 			for(int i : freqs) {
 				System.out.printf("%d ; ", i);
 			}
@@ -30,7 +32,9 @@ public class Question9B {
 			byte[] byteArray2 = ByteWorks.fileToBytes(path.substring(0, path.length()-4)+".CT");
 			plaintext = new String(byteArray2);
 			freqs = LetterWorks.getFrequencies(byteArray2);
+			
 			System.out.print("Caesar Ciphertext Frequencies: ");
+			
 			for(int i : freqs) {
 				System.out.printf("%d ; ", i);
 			}
@@ -39,17 +43,20 @@ public class Question9B {
 			
 			byte[] hash = new byte[16];
 			int counter = 0;
+			
 			for(byte b : byteArray) {
-				
 				hash[counter] = (byte) ((hash[counter] + b) % 26);
 				counter++;
 				if(counter==16)
 					counter=0;
 			}
+			
 			System.out.print("York Hash: ");
+			
 			for(byte b : hash) {
 				System.out.printf("%d ", b);
 			}
+			
 			System.out.println();
 			
 			double IoC = LetterWorks.getFreqIC(byteArray);
@@ -58,11 +65,15 @@ public class Question9B {
 			byte[] byteArray3 = new byte[byteArray.length];
 			Random rng = new Random();
 			char randomChar;
+			
+			//create array of random characters
 			for(int i = 0; i < byteArray.length; i++) {	
 				randomChar = Ciphers.numToChar((int)(rng.nextDouble() * 26));
 				byteArray3[i] = (byte)randomChar;
 			}
+			
 			System.out.println();
+			
 			IoC = LetterWorks.getFreqIC(byteArray3);
 			System.out.println("Incidence of Coincidence (Random Text): "+IoC);
 			

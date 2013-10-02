@@ -3,4 +3,14 @@
  
  Equation to result in CT from PT: CT = ((PT*a)+b)*c)+d -> CT = PT*a*c + b*c + d
  
-1) 
+ a*c = x
+ b*c = y
+ 
+ thus, CT = PT*x + y + d
+ 
+ y + d = z
+ 
+ thus, CT = PT*x+z
+ 
+Use the same process as in Q7 to discover the affine variables - double-encrypting
+by affine is thwarted by the group property.
