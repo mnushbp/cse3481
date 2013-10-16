@@ -2,5 +2,21 @@ Alice and Bob have public/private key pair each. How can Alice send a document
 to Bob so that he would have authentication and non-repudiation. How would your 
 answer change if the confidentiality of the transmission is not required. 
 
+Confidential Answer:
 1) Alice sends 'handshake' request to Bob, encrypted with Bob's public key.
-2) Bob decrypts with private key and encrypts return 'handshake' with alice's public key
+2) Bob decrypts with private key and encrypts return 'handshake' with alice's
+ public key
+3) Alice decrypts return handshake. At this point authentication is established,
+ as both have used their private keys.
+4) Alice sends Bob a request for symmetric encryption using his choice of secret
+ key, encrypted with Bob's private key.
+5) Bob responds affirmative, along with the secret key, encrypted using Alice's
+ private key.
+6) Alice encrypts the document with the secret key and sends it to Bob.
+7) Bob decrypts the document with his secret key. Alice cannot deny sending the
+ document, as it is encrypted with the secret key that only she and Bob know.
+ Therefore, non-repudiation is established.
+ 
+Non-confidential answer:
+Alice sends the document to Bob encrypted with her private key. Bob has authentication
+AND non-repudiation, as Alice is the only one with that private key.

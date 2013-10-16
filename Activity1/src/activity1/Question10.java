@@ -15,6 +15,7 @@ public class Question10 {
 			
 			byte[] cipherText = ByteWorks.fileToBytes(path);
 			int keyLength = determineKeyLength(cipherText);
+			
 			if(keyLength < 0) {
 				System.out.println("Could not find key length, operation stops.\n");
 			} else {
@@ -30,12 +31,14 @@ public class Question10 {
 				
 				while(currentIndex < keyLength) {
 					
+					//put each character at the current index of the key in an array
 					for(int i = 0; i < allSimilarlyShifted.length; i++)						
 						allSimilarlyShifted[i] = cipherText[currentIndex+i*keyLength];
 					
 					freqs = LetterWorks.getFrequencies(allSimilarlyShifted);
 					int highestFreq = 0;
 					
+					//determine letter with highest frequency - this will be E in plaintext
 					for(int i = 0; i < freqs.length; i++) {
 						
 						if(freqs[i] > highestFreq)
@@ -46,6 +49,7 @@ public class Question10 {
 						
 					}
 					
+					//put shift amount in key array
 					shift = estimatedEIndex - E_INDEX_ACTUAL;
 					if(shift < 0)
 						shift = 25 + shift;
@@ -53,6 +57,8 @@ public class Question10 {
 					
 					currentIndex++;
 				}
+				
+				//print key array - this will be the key
 				System.out.print("Shifts: ");
 				for(int i : shifts){
 					System.out.printf(" %c :", Ciphers.numToChar(i));
@@ -76,24 +82,29 @@ public class Question10 {
 		byte[] comparison;
 		int arraySize;
 		
+		//try different key lengths until a proper IoC is found
 		while (keyLength != ar.length) {
 			
 			arraySize = ar.length / keyLength;
-			
 			comparison = new byte[arraySize];
+			
+			//put each letter at the requisite interval in an array
 			for(int i = 0; i < comparison.length; i++) {;
 				comparison[i] = ar[cipherIndex];
 				cipherIndex += keyLength;
 			}
+			
 			indexOfCoincidence = LetterWorks.getFreqIC(comparison);
 			System.out.printf("KeyLength %d produced IoC %f\n", keyLength, indexOfCoincidence);
+			
+			//if IoC approaches 7 (english language IoC)
 			if(indexOfCoincidence > 0.06) {
 				return keyLength;
 			}
 			cipherIndex = 0;
 			keyLength++;			
 		}
-		
+		//if no key found
 		return -1;
 	}
 
