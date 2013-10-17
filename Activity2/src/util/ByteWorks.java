@@ -87,6 +87,12 @@ public class ByteWorks
 		for(int i = 0; i < ar.length; i++) {
 			int x = ar[i];
 			String tmp = Integer.toBinaryString(x);
+			while(tmp.length() < 8){
+				tmp = "0" + tmp;
+			}
+			while(tmp.length() > 8) {
+				tmp = tmp.substring(1);
+			}
 			result += tmp;
 		}
 		
