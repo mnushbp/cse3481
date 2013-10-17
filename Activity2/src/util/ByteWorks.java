@@ -78,5 +78,26 @@ public class ByteWorks
 		}
 		return result;
 	}
+	
+	//test this, not necessarily complete
+	public static String byteToBin(byte[] ar) {
+		
+		assert ar != null;
+		String result = "";
+		for(int i = 0; i < ar.length; i++) {
+			int x = ar[i];
+			String tmp = Integer.toBinaryString(x);
+			while(tmp.length() < 8){
+				tmp = "0" + tmp;
+			}
+			while(tmp.length() > 8) {
+				tmp = tmp.substring(1);
+			}
+			result += tmp;
+		}
+		
+		return result;
+		
+	}
 
 }

@@ -1,0 +1,23 @@
+2) Suppose you encrypt using an affine cipher, then encrypt the encryption using another affine 
+cipher (both are working mod 26). Is there any advantage to doing this, rather than using a single 
+affine cipher? Why or why not?
+
+No, there is no advantage. The equation to get the plaintext is as follows:
+
+pt = plaintext
+c = first ciphertext
+c' = final ciphertext
+a = multiplicative key for c
+b = additive key for c
+x = multiplicative key for c'
+y = additive key for c'
+
+c' = x*c + y
+c = a*pt + b
+
+by substitution, c' = x * (a * pt + b) + y
+multiply through the brackets, c' = x * a * pt + x * b + y
+let x * a = A, x*b+y = B
+now we have c' = A * pt + B <- this is the basic affine algorithm
+
+thus, it is a simple matter of finding the resultant A and B to decrypt, rather than finding two different keys.
