@@ -1,0 +1,12 @@
+5)Alice is sending a message to Bob using one of the following cryptosystems. In fact, Alice is bored 
+and her plaintexts consists of the letter a repeated a few hundred times. Eve knows what system is 
+being used, but not the key, and intercepts the ciphertext. For systems a, b, and c, state how Eve 
+will recognize that the plaintexts is one repeated letter and decide whether or not Eve can deduce 
+the letter and the key. (note: for system c, the solution very much depends on the fact that the 
+repeated letter is a, rather than b, c, ...)
+
+a) shift cipher
+b) affine cipher
+c) hill cipher (with a 2x2 matrix)
+
+

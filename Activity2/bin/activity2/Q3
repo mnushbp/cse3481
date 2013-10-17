@@ -1,0 +1,8 @@
+3) Suppos you have a language with only the three letters a, b, c, and they occur with frequencies 
+.7, .2 and .1 respectively. The following ciphertext was encrypted byt he Vigenere method (shifts 
+are mod 3 instead of mod 26 of course)
+
+ABCBABBBAC
+
+Suppose you are told the key length is 1, 2, or 3. Show that the key length is probably 2, and 
+determine the most probable key.

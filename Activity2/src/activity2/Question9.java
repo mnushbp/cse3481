@@ -1,5 +1,13 @@
 package activity2;
 
+import java.security.Key;
+import java.util.Random;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.SecretKeySpec;
+
+import util.ByteWorks;
+
 /*
  *  This is a programming question:*
  *
@@ -15,5 +23,31 @@ package activity2;
  */
 
 public class Question9 {
+	
+	public static void main(String[] args) throws Exception{
+		
+		// Encrypt "HelloCSE" with key "MyOwnKey"
+		Key secret = new SecretKeySpec("universe".getBytes(), "DES");
+		// no IV, our text is 64b
+		Cipher ce = Cipher.getInstance("DES/ECB/NoPadding");
+		ce.init(Cipher.ENCRYPT_MODE, secret);
+		byte[] pt = "Facebook".getBytes();
+		byte[] ct = ce.doFinal(pt);
+		System.out.println("Original");
+		System.out.println("PT = " + ByteWorks.byteToBin(pt));
+		System.out.println("CT = " + ByteWorks.byteToBin(ct));
+		Random rng = new Random();		
+		for(int i = 0; i < 10; i++) {
+			int byteToFlip = rng.nextInt(7);
+			int bitToFlip = rng.nextInt(7);
+			pt[byteToFlip] = (byte) (pt[byteToFlip] ^ (1 << bitToFlip));
+			ct = ce.doFinal(pt);
+			System.out.println("Flipped bit " + (byteToFlip+1)*(bitToFlip+1));
+			System.out.println("PT = " + ByteWorks.byteToBin(pt));
+			System.out.println("CT = " + ByteWorks.byteToBin(ct));
+		}
+		
+		
+	}
 
 }

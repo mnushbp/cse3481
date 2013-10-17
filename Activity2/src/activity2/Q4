@@ -1,0 +1,6 @@
+4a) The ciphertext ELNI was encrypted by a Hill cipher with a 2x2 matrix. The plaintext is dont. 
+Find the encryption matrix.
+
+b) Suppose the ciphertext is ELNK and the plaintext is still dont. Find the encryption matrix. 
+Note that the second column of the matrix is changed. This shows that the entire second column of 
+the encryption matrix is involved in obtaining the last character of the ciphertext (see end of section 2.7).
