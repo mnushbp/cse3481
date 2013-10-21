@@ -9,4 +9,16 @@ a) shift cipher
 b) affine cipher
 c) hill cipher (with a 2x2 matrix)
 
+a) The ciphertext will be the same letter repeated, just like the plaintext, revealing to Eve (abstractly)
+the contents of the plaintext. Eve cannot deduce the key or original letter because there is no sense to
+the message, and therefore no language patterns to recognize.
 
+b) The ciphertext will once more be the same letter repeated. This will reveal once more to Eve that
+the plaintext is a single letter repeated hundreds of times, but with no knowledge of the key she has
+no way of discerning which letter it is. As well, with no language patterns to analyze in a string of
+one repeated letter, there will be no way of determining the key.
+
+c) The ciphertext will be the same as the plaintext. Eve will know this because a resolves to numeric
+0, and so given any possible block size n and nxn encryption matrix, the result of multiplying a block
+of entirely a's (0,0,...0) with the matrix will be another matrix of entirely a's. A is the only letter
+that could possibly do this, and so Eve will be able to discern the plaintext (but not the key).

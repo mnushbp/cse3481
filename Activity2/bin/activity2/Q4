@@ -4,3 +4,38 @@ Find the encryption matrix.
 b) Suppose the ciphertext is ELNK and the plaintext is still dont. Find the encryption matrix. 
 Note that the second column of the matrix is changed. This shows that the entire second column of 
 the encryption matrix is involved in obtaining the last character of the ciphertext (see end of section 2.7).
+
+a) PT: do nt
+
+K: w x
+   y z
+   
+CT: EN LI
+
+3  14 * w x = 4 13
+13 24   y z   11 8
+
+det =
+-108
+
+
+
+
+
+E = d * w + o * y 
+4 = 3 * w + 14 * y
+
+N = d * x + o * z 
+13 = 3 * x + 14 * z
+
+L = n * w + t * y
+11 = 13 * w + 24 * y
+
+I = n * x + t * z 
+8 = 13 * x + 24 * z
+
+
+4 = 3 * w + 14 * y -> 52 = 39w + 182y 
+11 = 13 * w + 24 * y -> 33 = 39w + 72y 
+
+result: 19 = 110y
