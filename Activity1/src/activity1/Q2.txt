@@ -17,6 +17,9 @@ Replay: intercepting information en route to Alice or Bob and constantly re-send
 information in order to analyze the response. Active attack on availability and/or integrity
 and/or confidentiality.
 
+MARKING FEEDBACK
+Replay is an attack on integrity. It can be employed to perform the other kinds of attacks.
+
 Sniffing: analyzing communications without interfering, i.e. sniffing packets to determine content
 Spoofing: creating false data or modifying existing data to gain the appearance of authenticity and
 trustworthiness

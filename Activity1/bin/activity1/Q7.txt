@@ -6,3 +6,6 @@ Can you think of a known-plaintext cryptanalytic attack (i.e. not brute-force)
 2) As in Question 6, compare the different degrees (although with far more
 diversity, now that all letters are known), until the affine variables are
 revealed.
+
+MARKING FEEDBACK:
+Again simply solve two equations. No need to loop on all possibilities.

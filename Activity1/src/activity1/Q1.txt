@@ -5,6 +5,9 @@ services for computer / information security. What do they mean?
 C: Confidentiality. Private information should remain secret to all those but the intended recipient.
 I: Integrity. Information sent should remain accurate over its lifecycle, and should not be modified
 in an unauthorized or undetectable manner.
+
+Marking feedback: In adition to no change of the data, data inegrity includes sender integrity and non-repudiation.
+
 A: Availability. Data and communication should be visible and accessible to its intended user or recipient.
 
 

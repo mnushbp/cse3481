@@ -8,3 +8,13 @@ key. Thus, anything that was sent with Alice's encryption would naturally be
 assumed to have come from her. However, as Alice has shared this key without Bob's
 knowledge, whoever Alice may have shared the key with now has the ability to
 encrypt documents in the same fashion.
+
+MARKING FEEDBACK:
+We assume it is a secret key. So, we can't consider this case.
+
+ME FEEDBACK:
+
+Authentication assured: bob knows that only alice has the key, and knows that he didn't
+send it, so she must have
+Origin non-repudiation: alice can claim that bob sent the message himself, and bob can't
+deny it

@@ -20,3 +20,12 @@ Confidential Answer:
 Non-confidential answer:
 Alice sends the document to Bob encrypted with her private key. Bob has authentication
 AND non-repudiation, as Alice is the only one with that private key.
+
+
+MARKING FEEDBACK:
+In the first case non-repudation is not guaranteed. Since Alice can claim that Bob encrypted the message
+himself and he can't proof otherwise.
+
+The second case is correct since Alice is the only one that can encrypt the message with her private key.
+
+ME FEEDBACK: Maybe encrypt with secret key AND alice's public key.

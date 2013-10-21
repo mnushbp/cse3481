@@ -14,3 +14,12 @@
  
 Use the same process as in Q7 to discover the affine variables - double-encrypting
 by affine is thwarted by the group property.
+
+MARKING FEEDBACK:
+
+You need to write clear steps to apply meet in the middle!
+
+ME FEEDBACK: 
+
+Maybe go through all potentials for a for each b mod 26 (i.e. a = 1, b = 0, 1, 2...26, a=2, b=0,1,2...)
+for each encryption and find when they match, then try on next letter until match is found
