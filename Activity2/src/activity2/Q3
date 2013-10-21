@@ -7,3 +7,52 @@ ABCBABBBAC
 Suppose you are told the key length is 1, 2, or 3. Show that the key length is probably 2, and 
 determine the most probable key.
 
+Key length 1:
+
+Total: 10
+#A: 3 - .3
+#B: 5 - .5
+#C: 2 - .2
+
+close to uniform distribution, resembling random gibberish. Unlikely
+
+Key length 3:
+
+Part 1:
+Total: 4
+#A: 1 - .25
+#B: 2 - .5
+#C: 1 - .25
+
+Part 2:
+Total: 3
+#A: 1 - .33
+#B: 2 - .66
+#C: 0 - 0
+
+Part 3:
+Total: 3
+#A: 1 - .33
+#B: 1 - .33
+#C: 1 - .33
+
+close to uniform distributions again. Part 2 resembles the given frequencies, but is the only group,
+and so can be discounted as an outlier
+
+Key length 2:
+
+Part 1:
+Total: 5
+#A: 3 - .6
+#B: 1 - .2
+#C: 1 - .2
+
+Part 2:
+Total: 5
+#A: 4 - .8
+#B: 0 - 0
+#C: 1 - .2
+
+in each case, the distributions come close to the given distributions, making a key length of 2 likely
+
+The most likely key for this key length is AA. 
