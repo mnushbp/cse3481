@@ -1,3 +1,14 @@
 8) p147
 
 #6
+
+The only attribute of this encryption that makes it more expensive to attack is the additional time taken
+to run the encryption/decryption. The keyspace is the same, as there are still only two keys to find, and
+proceeds much as a meet-in-the-middle 2DES encryption would proceed:
+
+Encrypt a block of the known plaintext with all 2^56 keys. Decrypt the same block of the known ciphertext TWICE 
+with all 2^56 keys. Note that this does not mean try all permutations, merely use the same key to decrypt the 
+ciphertext twice. Store all of the resultant intermeditate potentials. When two intermediates match, there is a
+possible positive. Attempt to decrypt another block of the ciphertext with the determined key. If the decryption
+is successful, the keys have been found. Otherwise, the match is a false positive and it is necessary to continue
+iterating through the keyspace.

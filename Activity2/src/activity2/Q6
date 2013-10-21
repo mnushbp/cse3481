@@ -1,3 +1,34 @@
+NOT FINISHED
+
 6) p146
 
 #1
+
+a) This is essentially the same as the simplified DES-like algorithm discussed earlier in the chapter.
+
+Start with MnMn+1. Switch right and left to obtain Mn+1Mn. Now, use the same procedure as used in encryption (no
+need to use keys in reverse order as there is only one key) until M1M0 is obtained. Re-swap the halves,
+resulting in M0M1, which is the original plaintext.
+
+Proof: The first step takes Mn+1Mn and gives the output [Mn] [Mn+1 ^ f(Mn, K)].
+We know from the encryption procedure that Mn = Mn+1-1 and Mn+1  = Mn ^ f(Mn+1-1, K).
+Therefore,
+
+[Mn][Mn+1] ^ f(Mn, K)] = [Mn+1-1][Mn-1 ^ f(Mn+1-1, K) ^ f(Mn, K) = [Mn+1-1][Mn-1]
+
+The last equality again used Mn = Mn+1-1, so that f(Mn+1-1, K) ^ f(Mn, K) is 0.
+
+Similarly, the second step of decryption sends Mn+1-1Mn-1 to Mn+1-2Mn-2.
+
+Continuing, we see that the decryption process leads us back to M1M0. Switching the left and right halves, we 
+obtain the original plaintext M0M1 as desired.
+
+b) i) Assuming we know the process used to encrypt the ciphertext, yes. The keyspace is 2^n, and an exhaustive
+attack on the keyspace will reveal the key, given sufficient time. Merely use each potential key in the aforementioned
+decryption algorithm (which only requires the ciphertext), and eventually a key will be found that produces a
+sensible plaintext. This assumes that the plaintext is not gibberish.
+
+ii) Similar to i), yes. The process is made simpler, because now it is possible to absolutely validate that the
+correct key as been found, as opposed to having to make logical assumptions.
+
+c)
