@@ -1,27 +1,30 @@
+have [Mj][Mj+1]
+algorithm: mj+2 = mj ^ f(K, mj+1)
+rearrange: mj = mj+2 ^ f(K, mj+1)
+
+
+[mn-1][mn] mn-2 = mn ^ f(K, mn-1)
+
+
+
+
+
 NOT FINISHED - A MAY BE INCORRECT
 
 6) p146
 
 #1
 
-a) This is essentially the same as the simplified DES-like algorithm discussed earlier in the chapter.
+a) This is quite simple, as there is only one encryption step.
 
-Start with MnMn+1. Switch right and left to obtain Mn+1Mn. Now, use the same procedure as used in encryption (no
-need to use keys in reverse order as there is only one key) until M1M0 is obtained. Re-swap the halves,
-resulting in M0M1, which is the original plaintext.
+The original algorithm stiplulates that we have m0m1, and that we calculate mj+2 = mj ^ f(K, mj+1).
+as we have m0 and m1, we have all the variables needed to calculate m2. With m1 and m2, we have all
+the variables needed to calculate m3. This process continues for as many rounds as necessary.
+Decrytpion operates in much the same manner: after n rounds of encryption, We have [mn-1][mn]. We know 
+that mn = mn-2 ^ f(K, mn-1). Through rearranging, we also know that mn ^ f(K, mn-1) = mn-2. As we have
+mn and mn-1, we have all the variables we need to calculate mn-2. With mn-1 and mn-2, we can calculate
+mn-3, and so on, until we have m0m1 once more.
 
-Proof: The first step takes Mn+1Mn and gives the output [Mn] [Mn+1 ^ f(Mn, K)].
-We know from the encryption procedure that Mn = Mn+1-1 and Mn+1  = Mn ^ f(Mn+1-1, K).
-Therefore,
-
-[Mn][Mn+1] ^ f(Mn, K)] = [Mn+1-1][Mn-1 ^ f(Mn+1-1, K) ^ f(Mn, K) = [Mn+1-1][Mn-1]
-
-The last equality again used Mn = Mn+1-1, so that f(Mn+1-1, K) ^ f(Mn, K) is 0.
-
-Similarly, the second step of decryption sends Mn+1-1Mn-1 to Mn+1-2Mn-2.
-
-Continuing, we see that the decryption process leads us back to M1M0. Switching the left and right halves, we 
-obtain the original plaintext M0M1 as desired.
 
 b) i) Assuming we know the process used to encrypt the ciphertext, yes. Cryptanalytically, we can look at the
 equations used for encryption and find parts of the plaintext from a two-round encryption.
