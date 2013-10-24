@@ -16,3 +16,8 @@ To confirm:
 3) transmit RQ' to the website
 4) website encrypts confirmation with secret key
 5) decrypt confirmation with secret key.
+
+MARKING FEEDBACK:
+The problem with your steps is that the second step, an interceptor may send a secret key 
+and claim to be the original sender.The key should be sent in the same message as M, or 
+to be sent first and encrypt M with RQ.

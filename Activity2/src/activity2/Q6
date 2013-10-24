@@ -1,3 +1,69 @@
 6) p146
 
 #1
+
+a) This is quite simple, as there is only one encryption step.
+
+The original algorithm stiplulates that we have m0m1, and that we calculate mj+2 = mj ^ f(K, mj+1).
+as we have m0 and m1, we have all the variables needed to calculate m2. With m1 and m2, we have all
+the variables needed to calculate m3. This process continues for as many rounds as necessary.
+Decrytpion operates in much the same manner: after n rounds of encryption, We have [mn-1][mn]. We know 
+that mn = mn-2 ^ f(K, mn-1). Through rearranging, we also know that mn ^ f(K, mn-1) = mn-2. As we have
+mn and mn-1, we have all the variables we need to calculate mn-2. With mn-1 and mn-2, we can calculate
+mn-3, and so on, until we have m0m1 once more.
+
+
+b) i) Assuming we know the process used to encrypt the ciphertext, yes. Cryptanalytically, we can look at the
+equations used for encryption and find parts of the plaintext from a two-round encryption.
+
+given plaintext m0m1
+and encryption function mj+2 = mj ^ f(K, mj+1)
+and key function f = K ^ mj+1
+we discover:
+
+m0 = m0
+m1 = m1
+m2 = m0 ^ (k ^ m1)
+m3 = m1 ^ (k ^ m2)
+
+note that xor is associative, therefore
+
+m2 = m0 ^ k ^ m1
+m3 = m1 ^ k ^ m2
+
+if we xor m2 and m3, we have
+
+m2 ^ m3 = (m0 ^ k ^ m1) ^ (m1 ^ k ^ m2), which is by associativity m0 ^ k ^ m1 ^ m1 ^ k ^ m2
+
+Since we know x ^ x = 0, and x ^ 0 = x, through some rearranging of the equation we arrive at
+
+m2 ^ m3 = m0 ^ m2
+
+Therefore m0 = m3. We now have half of the plaintext. Now simply refocus n bits down the CT and repeat the process,
+with the old m3 = new m2 and the next n bits in the ciphertext serving as m3. This will reveal the content of the old
+m1 (in the new equation, m0). Now that we have both m0 and m1, we can solve for k, and thus we know the plaintext and
+the key.
+
+ii) Similar to i), only now all we have to do is solve for k using either the equation for m2 or m3.
+
+
+c) Given three rounds, we end up with the equations for m0...m4 as:
+
+m0 = m0
+m1 = m1
+m2 = m0 ^ k ^ m1
+m3 = m1 ^ k ^ m2 = m1 ^ k ^ m0 ^ k ^ m1 = m0
+m4 = m2 ^ k ^ m3 = m0 ^ k ^ m1 ^ k ^ m1 ^ k ^ m2 = m0 ^ k ^ m2
+
+and m3 ^ m4 = m0 ^ m4 = m0 ^ m0 ^ k ^ m2
+so m3 ^ m4 = k ^ m2
+
+Again, from the equation for m3 we already know m0. While this is not as simple to cryptanalytically attack as a
+2-round encryption, it dramatically diminishes the keyspace, as now it is only necessary to exhaustively attack
+all keys that, when xored with m2 and m3, equal m4. At the very least, in cases using the wrong key, the execution
+time is cut by 40%.
+
+
+
+
+

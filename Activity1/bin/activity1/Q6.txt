@@ -18,4 +18,7 @@ would work.
  e.g. given e=z, for steps 4/5, do (e*1=e)+21 = z. Then see if 1 and 21 apply to
  the next most common letter. Then do the same for (e*2=j)+19=z, and so on.
  
+ MARKING FEEDBACK:
+ Instread of looping, just solve the two equations correponding to letters 'e' and 't'
+ 
  
