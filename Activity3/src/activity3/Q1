@@ -1,0 +1,26 @@
+Exercise 2
+a)
+n = 55
+p = 5
+q = 11
+e = 3
+d=?
+
+p-1 = 4
+q-1 = 10
+
+d(3) = 1 mod 40
+
+d = 27
+
+b)
+
+by Euler's theorem, as gcd(m, 55) = 1, m^psi(55) = 1 (mod 55)
+
+psi(55) = psi(5*11) = 4*10 = 40 = A ----> m^A = 1
+
+Assuming de = 1 (mod A), we can write de = 1 + k*A for some integer k. Therefore
+
+c^d = (m^e)^d = m^1+k*A = m * (m^A)^k = m*1^k = m (mod n)
+
+therefore, the ciphertext (c) raised to the decryption exponent (d) yields the plaintext (m)
