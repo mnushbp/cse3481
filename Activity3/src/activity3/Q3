@@ -1,11 +1,18 @@
-NOT COMPLETE
+Exercise 8
 
-Ex 8
+In order to increase security, Bob chooses n and two encryption exponents e1, e2. He asks Alice to encrypt
+her message m to him by first computing c1 = m^e1 (mod n), then encrypting c1 to get c2 = c1^e2 (mod n).
+Alice then sends c2 to Bob. Does this double encryption increase security over single encryption? Why or why not?
 
 No. 
 
-c1 = m^e1 (mod n). This means that m^e1 = c1 + kn for some k. Then re-encrypt: c2 = c1^e2 (mod n), which is c2 + kn. 
+Given current systems, RSA is unattackable. Two times unattackable is still unattackable.
 
-Rearranging: c2 = m^e1^e2 ; c2 = (c1 + kn)^e2
+Given a theoretical system that can attack RSA within one lifetime, there are two methods:
 
-What has been done in this case is (m^e1)^e2 mod n. This resolves to m^e1*e2, or m^e3, which is the same as a single RSA encryption.
+1) Factoring n. Once the factorization is broken, it is just as easy to computer d1 and d2 as it is just to
+compute d1.
+
+2) Attacking the full keyspace of d. Note that c2 = (m^e1)^e2, which is just m^e1e2. To decrypt this, simply calculate
+c2^d1d2. The keyspace of d1d2 is only twice the keyspace of d1, and so is not harder in an exponential sense like
+2DES would be.

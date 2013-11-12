@@ -1,1 +1,7 @@
-Ex 19
+Exercise 19
+
+Let n=pq be the product of two distinct primes.
+a) Let m be a multiple of phi(n). Show that if gcd(a,n) = 1, then a^m =e= 1 (mod p) and (mod q)
+b) Suppose m is as in part (a), and let a be arbitrary (possibly gcd(a, n) != 1). Show that a^m+1 =e= a (mod p) and (mod q)
+c) Let e and d be encryption and decryption exponsents for RSA with modulus n. Show that a^ed =e= a (mod n) for all a.
+This shows that we do not need to assume gcd(a,n) = 1 in order to use RSA.

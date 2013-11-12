@@ -1,1 +1,6 @@
-Ex 14
+Exercise 14
+
+Suppose you have two distinct large primes p and q. Explain how you can find an integer x such that:
+
+x^2 = 49 (mod pq), x != +/- 7 (mod pq)
+

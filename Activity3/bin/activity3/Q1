@@ -1,4 +1,11 @@
 Exercise 2
+
+Suppose your RSA modulus is n = 55 = 5 * 11 and your encryption exponent is e=3
+a) Find the decryption exponent d
+b) Assume that gcd(m, 55) = 1. Show that if c = m^3 (mod 55) is the ciphertext, then the plaintext
+is m = c^d (mod 55). Do not quote the fact that RSA decryption works. That is what you are showing
+in this case.
+
 a)
 n = 55
 p = 5
@@ -15,9 +22,9 @@ d = 27
 
 b)
 
-by Euler's theorem, as gcd(m, 55) = 1, m^psi(55) = 1 (mod 55)
+by Euler's theorem, as gcd(m, 55) = 1, m^phi(55) = 1 (mod 55)
 
-psi(55) = psi(5*11) = 4*10 = 40 = A ----> m^A = 1
+phi(55) = phi(5*11) = 4*10 = 40 = A ----> m^A = 1
 
 Assuming de = 1 (mod A), we can write de = 1 + k*A for some integer k. Therefore
 

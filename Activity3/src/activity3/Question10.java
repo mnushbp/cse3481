@@ -1,6 +1,11 @@
 package activity3;
 
 import java.math.BigInteger;
+import java.security.KeyFactory;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.spec.RSAPrivateKeySpec;
+
+import javax.crypto.Cipher;
 
 /*
  * Bob has the an RSA public key with the following exponent e and modulus n:
@@ -28,9 +33,9 @@ Using this information, determine Alice's secret message.
 
 public class Question10 {
 	
-	public static void main(String args[]) {
+	public static void main(String args[]) throws Exception{
 		
-		int e = 74327;
+		BigInteger e = new BigInteger("74327");
 		BigInteger n = new BigInteger("94587468335128982981605019776781234618384857805657005686084562260910788622013722" +
 		"07092649169084385369007124813013442783232496672858253283236322154223178706820376" +
 		"30270674000828353944598575250177072847684118190067762114937353265007829546216602" +
@@ -41,6 +46,29 @@ public class Question10 {
 		"66831217073027652061091790342124418143422318965525239492387183438956");
 		BigInteger p = new BigInteger("10358344307803887695931304169230543785620607743682421994532795393937342395753127" +
 		"888522373061586445417642355843316524942445924294144921649080401518286829171");
+
+		BigInteger q = n.divide(p);
+		
+		BigInteger qminus = q.subtract(new BigInteger("1"));
+		BigInteger pminus = p.subtract(new BigInteger("1"));
+		
+		BigInteger d = e.modInverse(qminus.multiply(pminus));
+		
+		KeyFactory factory = KeyFactory.getInstance("RSA");
+		RSAPrivateKeySpec priv = new RSAPrivateKeySpec(n, d);
+		RSAPrivateKey key = (RSAPrivateKey) factory.generatePrivate(priv);
+		
+		Cipher cipher = Cipher.getInstance("RSA/ECB/NoPadding");
+		cipher.init(Cipher.DECRYPT_MODE, key);
+		
+		byte[] pt = cipher.doFinal(c.toByteArray());
+		
+		for(byte b : pt) {
+			if (b != 0)
+			    System.out.print( (char) b);
+		}
+		System.out.println();
+		
 	}
 
 }

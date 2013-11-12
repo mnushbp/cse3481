@@ -1,4 +1,11 @@
-Ex 12
+Exercise 12
+
+You are trying to factor n = 642401. Suppose you discover that 516107^2 = 7 (mod n) and
+that 187722^2 = 2^2 * 7 (mod n).
+
+Use this information to factor n.
+
+
 
 516107^2 = 7 (mod 642401)
 187722 = 2^2 * 7 (mod 642401)

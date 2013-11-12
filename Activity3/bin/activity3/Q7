@@ -1,1 +1,5 @@
-Ex 16
+Exercise 16
+
+Suppose two users Alice and Bob have the same RSA modulus n and suppose that their encryption exponents 
+e_A and e_B are relatively prime. Charles wants to send the message m to Alice and Bob, so he encrypts to
+get c_A =e= m^e_A and c_B =e= m^e_B (mod n). Show how Eve can find m if she intercepts c_A and c_B.

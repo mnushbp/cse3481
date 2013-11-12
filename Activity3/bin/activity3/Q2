@@ -1,4 +1,8 @@
 Exercise 5
 
-p is prime, therefore gcd (x, p) = 1, therefore x^psi(p) = 1 (mod p). p is prime, so psi(p) = p-1. Now, find a number d such that de = 1 (mod p-1). that d is the decryption exponent, by the same logic as
+Let p be a large prime. Suppose you encrypt a message x by computing y =e= x^e (mod p) for some (suitably
+chosen) encryption exponent e. How do you find a decryption exponent d such that y^d = x (mod p).
+
+p is prime, therefore gcd (x, p) = 1, therefore x^phi(p) = 1 (mod p). p is prime, so phi(p) = p-1. 
+Now, find a number d such that de = 1 (mod p-1). that d is the decryption exponent, by the same logic as
 used in normal RSA decryption.
