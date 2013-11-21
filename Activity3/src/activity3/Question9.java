@@ -51,6 +51,8 @@ public class Question9 {
 		//BigInteger e = new BigInteger("74327");
 		byte[] pt;
 		
+		//do with JCE
+		
 		KeyFactory factory = KeyFactory.getInstance("RSA");
 		RSAPrivateKeySpec priv = new RSAPrivateKeySpec(n, d);
 		RSAPrivateKey key = (RSAPrivateKey) factory.generatePrivate(priv);
@@ -62,6 +64,17 @@ public class Question9 {
 		
 		for(byte b : pt) {
 			if (b != 0)
+				System.out.print( (char) b);
+		}
+		System.out.println();
+		
+		//do manually
+		
+		BigInteger plain = ct.modPow(d, n);
+		pt = plain.toByteArray();
+		
+		for(byte b : pt) {
+			if(b != 0)
 				System.out.print( (char) b);
 		}
 		System.out.println();

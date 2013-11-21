@@ -2,9 +2,10 @@ Exercise 15
 
 Suppose n is a large odd number. You calculate 2^(n-1)/2 = k(mod n), where k is some integer with k = +/- 1 (mod n)
 
-a) Suppose k^2 =/e= 1 (mod n). Explain why this implies that n is not prime.
 
-b) Suppose k^2 =e= 1 (mod n). Explain how you can use this information to factor n.
+a) Suppose k^2 != 1 (mod n). Explain why this implies that n is not prime.
+
+b) Suppose k^2 != 1 (mod n). Explain how you can use this information to factor n.
 
 a)
 if n is prime, 2^n-1 = 1 mod n
