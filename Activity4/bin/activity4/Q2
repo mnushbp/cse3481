@@ -7,4 +7,5 @@ b) Why is h not strongly collision-free?
 
 a) h is preimage resistant because it is impossible to perform a logarithm. Had the position of x and 2 been swapped,
 the preimage would have been (for arbitrary y) x = log_2(y+k*n). However, in this case, it is necessary to find 
+
 x = sqrt(y+k*n). This is a much more difficult calculation
