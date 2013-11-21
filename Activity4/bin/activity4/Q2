@@ -1,0 +1,10 @@
+Exercise 2 of Chapter 8.
+
+Let n=pq be the product of two distinct large primes and let h(x) = x^2(mod n).
+a) why is h preimage resistant? (Of course, there are some values, such as 1, 4, 9, 16, ... for which it is easy to
+find a preimage. But usually it is difficult).
+b) Why is h not strongly collision-free?
+
+a) h is preimage resistant because it is impossible to perform a logarithm. Had the position of x and 2 been swapped,
+the preimage would have been (for arbitrary y) x = log_2(y+k*n). However, in this case, it is necessary to find 
+x = sqrt(y+k*n). This is a much more difficult calculation

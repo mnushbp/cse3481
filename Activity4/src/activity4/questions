@@ -1,0 +1,37 @@
+Exercise 1 of Chapter 8.
+
+Let p be a prima and let a be and integer with p (does not divide) a. Let h(x) = a^x (mod p). Explain why h(x) is not
+a good cryptographic hash function.
+
+Exercise 2 of Chapter 8.
+
+Let n=pq be the product of two distinct large primes and let h(x) = x^2(mod n).
+a) why is h preimage resistant? (Of course, there are some values, such as 1, 4, 9, 16, ... for which it is easy to
+find a preimage. But usually it is difficult).
+b) Why is h not strongly collision-free?
+
+Exercise 9 of Chapter 8.
+
+Just read it from the book
+
+Exercise 10 of Chapter 8.
+
+a) Show that neither of the two hash functions of Section 8.2 is preimage resistant. That is, given an arbitrary y
+(of the appropriate length), show how to find an input x whose hash is y
+b) Find a collision for each of the two hash functions of Section 8.2
+
+Exercise 2 of Chapter 10.
+
+book
+
+Exercise 3 of Chapter 10.
+
+Exercise 6 of Chapter 10.
+
+Exercise 6 of Chapter 12.
+
+Exercise 8 of Chapter 12.
+
+This is a programming question:*
+
+Computer Problem 1 of Chapter 8 (page 242).
