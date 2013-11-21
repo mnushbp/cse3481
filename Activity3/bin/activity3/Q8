@@ -5,3 +5,8 @@ a) Let m be a multiple of phi(n). Show that if gcd(a,n) = 1, then a^m =e= 1 (mod
 b) Suppose m is as in part (a), and let a be arbitrary (possibly gcd(a, n) != 1). Show that a^m+1 =e= a (mod p) and (mod q)
 c) Let e and d be encryption and decryption exponsents for RSA with modulus n. Show that a^ed =e= a (mod n) for all a.
 This shows that we do not need to assume gcd(a,n) = 1 in order to use RSA.
+
+Fermat: if a^n-1 = 1 (mod n), then n is prime and gcd(a, n) = 1
+Euler: if a^psi(n) = 1 (mod n), then gcd (a, n) = 1
+psi(n) = number of numbers that do not divide n. If n is prime, all numbers except n and 1 do not divide, therefore
+psi(n) = n-1

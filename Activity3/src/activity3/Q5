@@ -4,3 +4,14 @@ Suppose you have two distinct large primes p and q. Explain how you can find an 
 
 x^2 = 49 (mod pq), x != +/- 7 (mod pq)
 
+By primality testing, we know that if x^2 = y^2 (mod pq) and x != +/- y (mod pq), x must be composite. Furthermore,
+gcd(x - y, n) gives a nontrivial factor of n).
+
+Here, we have gcd(x-7, pq) = factor of pq. As there are only four factors of pq (1, p, q, pq), and we know that two
+of them are necessarily excluded (1, pq) by primality testing, we can select x-7 = p, or x-7 = q. Therefore, 
+x = p+7 or x = q+7.
+
+Primality testing:Let d = gcd(x-7, pq). If d = pq, then x = y(mod pq), which is assumed not to happen. 
+Suppose d = 1. A basic result on divisibility is that is a | bc and gcd(a,b) = 1, then a|c. In this case,
+since pq divides x^2 - y^2 = (x-y)(x+y) and d = 1, we must have that pq divides x+y, which contradicts the
+assumption that x != y (mod pq). Therefore, d != 1 or pq, so d is a nontrivial factor of pq.
