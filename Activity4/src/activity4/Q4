@@ -1,0 +1,7 @@
+Exercise 10 of Chapter 8.
+
+a) Show that neither of the two hash functions of Section 8.2 is preimage resistant. That is, given an arbitrary y
+(of the appropriate length), show how to find an input x whose hash is y
+b) Find a collision for each of the two hash functions of Section 8.2
+
+a)

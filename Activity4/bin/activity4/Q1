@@ -1,0 +1,21 @@
+Exercise 1 of Chapter 8.
+
+Let p be a prime and let a be and integer with p (does not divide) a. Let h(x) = a^x (mod p). Explain why h(x) is not
+a good cryptographic hash function.
+
+-----------------------------------
+
+Not preimage-resistant. By Fermat's theorem, we know that a^p-1 = 1 (mod p). We simply break 
+
+
+
+
+For an arbitrary y, x = log_a(y + k*p)
+
+
+
+
+
+
+Depending on the size of p, may not be collision free.
+
