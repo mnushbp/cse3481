@@ -8,3 +8,5 @@ ca = m^eA (mod n)
 cb = m^eB (mod n)
 
 gcd(eA, eB) = 1. Therefore, eA and eB are invertible mod n, i.e. eA * (inv) = 1 (mod n)
+
+I have no idea. Please post the solution in the feedback.

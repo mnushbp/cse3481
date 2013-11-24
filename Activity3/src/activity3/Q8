@@ -6,7 +6,7 @@ b) Suppose m is as in part (a), and let a be arbitrary (possibly gcd(a, n) != 1)
 c) Let e and d be encryption and decryption exponsents for RSA with modulus n. Show that a^ed =e= a (mod n) for all a.
 This shows that we do not need to assume gcd(a,n) = 1 in order to use RSA.
 
-Fermat: if a^n-1 = 1 (mod n), then n is prime and gcd(a, n) = 1
-Euler: if a^psi(n) = 1 (mod n), then gcd (a, n) = 1
-psi(n) = number of numbers that do not divide n. If n is prime, all numbers except n and 1 do not divide, therefore
-psi(n) = n-1
+a) m is a multiple of phi(n). phi(n) = (p-1)(q-1). Therefore, m = k(p-1)(q-1) for some k.
+gcd(a,n) = 1, therefore a and n are coprime.
+
+That's all i got. I imagine I'm going to feel really silly when I read the feedback and see that the answers have been staring me in the face this entire time.

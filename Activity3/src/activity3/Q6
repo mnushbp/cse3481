@@ -1,31 +1,9 @@
 Exercise 15
 
-Suppose n is a large odd number. You calculate 2^(n-1)/2 != k(mod n), where k is some integer with k != +/- 1 (mod n)
+Suppose n is a large odd number. You calculate 2^(n-1)/2 = k(mod n), where k is some integer with k != +/- 1 (mod n)
 
 a) Suppose k^2 != 1 (mod n). Explain why this implies that n is not prime.
 
-b) Suppose k^2 != 1 (mod n). Explain how you can use this information to factor n.
+b) Suppose k^2 = 1 (mod n). Explain how you can use this information to factor n.
 
-a)
-if n is prime, 2^n-1 = 1 mod n
-we have 2^n-1/2 = +/-1 mod n 
-from this, we know that n-1 is even, else k would have to have a decimal component.
-Therefore, n is odd.
-
-
-
-
-a) we have k^2 != 1, k = 1
-
-
-
-Suppose you have two distinct large primes p and q. Explain how you can find an integer x such that:
-
-x^2 = 49 (mod pq), x != +/- 7 (mod pq)
-
-By primality testing, we know that if x^2 = y^2 (mod pq) and x != +/- y (mod pq), x must be composite. Furthermore,
-gcd(x - y, n) gives a nontrivial factor of n).
-
-Here, we have gcd(x-7, pq) = factor of pq. As there are only four factors of pq (1, p, q, pq), and we know that two
-of them are necessarily excluded (1, pq) by primality testing, we can select x-7 = p, or x-7 = q. Therefore, 
-x = p+7 or x = q+7.
+I have no idea. Please post the solution in the feedback.
