@@ -5,3 +5,57 @@ a) Show that neither of the two hash functions of Section 8.2 is preimage resist
 b) Find a collision for each of the two hash functions of Section 8.2
 
 a)
+Hash 1: given y, xor with a series of blocks designed to set each bit to 0, e.g.
+
+y = 01010101
+block 1 = 00000000
+block 2 = 01000000
+etc...
+essentially reverse the given algorithm until you end up with an original "x", e.g.
+
+x=0000000100000000000001000000000000010000000000000100000000000000
+
+Hash 2: as in hash 1, only when creating "x", shift each block the requisite amount, e.g.
+
+y = 11011001
+block 1 = 10000000
+block 2 = 01000000
+block 3 = 00000000
+block 4 = 00010000
+etc...
+
+x = (block 1 << 0) + (block 2 << 1) + ... + 00010000 << 5 (so 00000010) + 00000000 + 01000000 << 7 (so 00100000) + 10000000
+
+where + is concatenation
+
+b) small block size (4) for easy examples:
+HASH 1
+x = 1010111010000011
+1 = 1010
+2 = 1110
+3 = 1000
+4 = 0011
+y = 1111
+
+collision x = 1000010000100001
+1 = 1000
+2 = 0100
+3 = 0010
+4 = 0001
+y = 1111
+
+HASH 2
+
+x = 1010111010000011
+1 = 1010
+2 = 0111
+3 = 0010
+4 = 0011
+y = 1100
+
+reverse to find collision:
+1 = 1000
+2 = 0100
+3 = 0000
+4 = 0000
+x = 1000100000000000

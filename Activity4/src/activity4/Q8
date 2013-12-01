@@ -1,1 +1,7 @@
 Exercise 6 of Chapter 12.
+
+a) The smallest number needed is three participants. There are three possible Ms that can come out of this (AB, AC, BC). Say B is the cheater - AB and BC will not work, but AC will.
+
+b) The smallest number needed when there is only one try allowed is four. In this case, there are (AB, AC, AD, BC, BD, CD) possible shares. If B is the cheater, AC, AD, CD will all result
+in the same answer, having been pulled from the appropriate equation. Any answer involving B will be wrong, and will also vary from the answer of each other answer involving B. Thus, it 
+will be easy to determine that B is the cheater, and to isolate the correct key with two of the three remaining secrets.

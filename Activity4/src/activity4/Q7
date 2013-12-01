@@ -1,1 +1,17 @@
 Exercise 6 of Chapter 10.
+
+a)
+M1 = Kn ^ K
+M2 = M1 ^ Kh = Kn ^ K ^ Kh
+M3 = M2 ^ Kn = Kn ^ K ^ Kh ^ Kn = K ^ Kh
+result = M3 ^ Kh = K ^ Kh ^ Kh = K
+
+b)
+eve has m1, m2, m3 - how to get K
+
+K = M1 ^ Kn
+K = M3 ^ Kh
+M3 = M2 ^ Kn
+Kn = M3 ^ M2
+
+therefore, K = M1 ^ M3 ^ M2

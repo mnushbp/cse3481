@@ -1,2 +1,17 @@
 Exercise 9 of Chapter 8.
 
+a) Try to encrypt m with a set of sqrt(N) keys. Try to decrypt c with a different set of sqrt(N) keys. The birthday paradox says that there
+is a good chance that there is a match between the first list and the second list. This match is the "meet in the middle" for a dual
+encryption, i.e. E(m, K1) = n, E(n, K2) = c, therefore E(E(m, K1), K2) = c. Now that we have two keys that lead from m to c, the question states
+that it is trivial to find a K3 that results in the same encryption.
+
+b)
+26 possible letters to encrypt (m)
+26 possible encrypted letters (c)
+26 possible amounts to shift (k)
+trivial to find decryption, given encryption
+given two encryption keys (shift amounts), a third key with equivalent behaviour is simply the first key plus the second key, mod k
+
+To attack with a birthday attack with two lists of length 6 (6 > sqrt(26)), given one (m, c) pair: add shift amounts from the first list
+to m. Subtract the shift amounts from the second list from c. Chances are good that there will be a match. The total shift amount (and 
+therefore the key) is the shift amount from m to the match plus the shift amount from the match to c.

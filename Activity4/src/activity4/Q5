@@ -1,3 +1,17 @@
 Exercise 2 of Chapter 10.
 
-book
+a)Kab = Ga(Rb)
+Ga(x) = Aa + Ba*x (mod p) therefore Ga(Rb) = Aa + Ba*Rb (mod p)
+Aa = a + b*Ra (mod p)
+Ba = b + c*Ra (mod p)
+substitution: Ga(x) = a + b*Ra + b*Rb + c*Rb*Ra (mod p)
+factor b: a + b(Ra+Rb) + cRaRb (mod p)
+
+b) Kba = Gb(Ra)
+Gb(Rb) = Ab + Bb*Ra (mod p)
+Ab = a + b*Rb (mod p)
+Bb = b + c*Ra (mod p)
+substitution: Gb(x) = a + b*Rb+b*Ra + c*Rb*Ra
+factor b: a + b(Rb+Ra) + cRbRa -> a, b and c are all constant across users, therefore this is equivalent to Kab
+
+c) f(Ra, Rb) = a + b(Ra+Rb) + cRaRb

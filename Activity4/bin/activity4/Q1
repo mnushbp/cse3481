@@ -5,17 +5,6 @@ a good cryptographic hash function.
 
 -----------------------------------
 
-Not preimage-resistant. By Fermat's theorem, we know that a^p-1 = 1 (mod p). We simply break 
-
-
-
-
-For an arbitrary y, x = log_a(y + k*p)
-
-
-
-
-
-
-Depending on the size of p, may not be collision free.
-
+h(x) is not collision resistant. Because p is prime and a does not divide p, we know by fermat's theorem that a^p-1 = 1 (mod p).
+Thus, if we multiply a^x by a*p-1, resulting in a^x+p-1, we gain a result that has a different exponent (message), but the same
+hash (as a^p-1 = 1, a^x * 1 = a^x).

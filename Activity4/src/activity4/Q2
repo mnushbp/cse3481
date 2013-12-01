@@ -5,7 +5,12 @@ a) why is h preimage resistant? (Of course, there are some values, such as 1, 4,
 find a preimage. But usually it is difficult).
 b) Why is h not strongly collision-free?
 
-a) h is preimage resistant because it is impossible to perform a logarithm. Had the position of x and 2 been swapped,
-the preimage would have been (for arbitrary y) x = log_2(y+k*n). However, in this case, it is necessary to find 
+a) 
+It is preimage resistant because once the message is digested by the modulus, it is impossible to take the square root
+of without introducing real numbers.
 
-x = sqrt(y+k*n). This is a much more difficult calculation
+
+b)
+h is not strongly collision free because of euler's theorem. The theorem states that if gcd(a, n) = 1, then
+a^phi(n) = 1 mod n. This means that unless x  is p, q or k*n, x^phi(n) = 1. We simply follow the procedure from question 1
+(x^2 * x^phi(n) = x^2(mod n)), and it is easy to find collisions.

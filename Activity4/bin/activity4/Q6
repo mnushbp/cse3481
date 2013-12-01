@@ -1,1 +1,31 @@
 Exercise 3 of Chapter 10.
+
+p = 31
+Ru = 9
+Ri = 1
+Au = 18
+Bu = 29
+Ai = 24
+Bi = 23
+
+Au = a + b*Ru (mod p) -> 18 = a + 9b (mod 31)
+Ai = a + b*Ri (mod p) -> 24 = a + b (mod 31)
+subtract: -6 = 8b -> 25 = 8b (mod 31)
+25/8 = b (mod 31) -> introduces real numbers, no good - add mod
+56/8 = b (mod 31 -> better, b = 7
+
+now substitute
+
+Au = a + b*Ru (mod p)
+18 = a + 9*7 (mod 31)
+a = 18 - 63 (mod 31)
+a = 17 -> check: Au = 17 + 63 (mod 31) -> Au = 18, good
+
+Bu = b + c*Ru (mod p)
+29 = 7 + c*9 (mod 31)
+(29 - 7)/9 = c (mod 31)
+22/9 = c (mod 31) -> real numbers, no good - add mod
+53/9 = c...84/9 = c...etc...270/9 = c  -> bingo, c = 30
+check: Bu = 7 + 30*9 (mod 31) = 277 (mod 31) -> Bu = 29 , good
+
+Therefore, a = 17, b = 7, c = 30
